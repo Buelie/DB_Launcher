@@ -78,6 +78,6 @@ br.grid(column=10,columnspan=40,ipadx=60,row=11)
 StartGameBtn = tkinter.Button(MainTK,text="启动游戏")
 StartGameBtn.grid(column=10,columnspan=40,ipadx=60,row=12)
 
-MainTK.title("梦回启动器")
+MainTK.title("DB启动器")
 MainTK.geometry("1080x650")
 MainTK.mainloop()
