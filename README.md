@@ -17,11 +17,13 @@ A Minecraft launcher based on Python
 
 # 使用方法&注意事项
 
-1. 到Tag找到相应版本下载好解压包解压
-2. 下载Python≧3.10版本
-3. 按下`ctrl+r`,在对话框内输入:`cmd`**
-4. 在cmd内输入如下代码安装或更新(50%的问题可以提供更新此库解决):
-```
-pip install ttkbootstrap
-```
-5.
+* **到Tag找到相应版本下载好解压包解压**
+* **下载Python≧3.10版本**
+* **按下`ctrl+r`,在对话框内输入:`cmd`**
+* **在cmd内输入如下代码安装或更新(50%的问题可以提供更新此库解决):`pip install ttkbootstrap`**
+* **运行main.py文件(注:Beta.py文件与main.py相互关联,请小心删除)**
+---
+* **注意事项**
+  * **一定要安装`ttkbootstrap`库,程序基于此库开发**
+  * **请不要随意更改源文件**
+  * **启动器目前没有日志,出现问题请寻求可靠的人帮助**
