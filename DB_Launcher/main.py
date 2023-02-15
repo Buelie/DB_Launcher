@@ -1,5 +1,5 @@
 from ttkbootstrap import Style
-#import Beta
+import Beta
 import tkinter
 
 #b = Beta.beta_mc()
@@ -32,6 +32,12 @@ def addver():
                 rn.config(text="- - -[状态：安装成功]- - -")
             else:
                 rn.config(text="- - -[状态：安装失败]- - -")
+        elif ModApi.get() == 3:
+            if AddVer.get() in VERMC:
+                MinecraftVer.append(f'原版-' + AddVer.get())
+                rn.config(text="- - -[状态：安装成功]- - -")
+            else:
+                rn.config(text="- - -[状态：安装失败]- - -")
         elif ModApi.get() != 2 or ModApi.get() != 1 or ModApi.get() == "":
             rn.config(text="- - -[状态：安装失败]- - -")
         else:
@@ -40,8 +46,24 @@ def addver():
     except:
         rn.config(text="- - -[状态：安装失败]- - -")
 
+def qh():
+    try:
+        if BG.get() == 1:
+            style = Style(theme="superhero")
+            MainTK = style.master
+        elif BG.get() == 2:
+            style = Style(theme="minty")
+            MainTK = style.master
+        else:
+            print("ERROR")
+    except:
+        print("ERROR")
+
 def addverB():
-    pass
+    inst = Beta.window.ins_wind()
+    inst()
+    #MainTKT.mainloop()
+    #pass
 
 Bgimg = tkinter.Label(MainTK, text="                     DB启动器                     \n\n", bg="#366ace",font=("楷体",28))
 Bgimg.grid(column=10,columnspan=1,ipadx=30,row=1)
@@ -53,31 +75,40 @@ rn = tkinter.Label(MainTK,text="- - -[状态：待安装]- - -",fg="#214283",fon
 rn.grid(column=10,columnspan=50,ipadx=60,row=3)
 
 ModApi = tkinter.IntVar()
-ModApi.set("Forge")
+ModApi.set(1)
 ApiForge = tkinter.Radiobutton(MainTK,text="Forge",variable=ModApi,value=1)
 ApiForge.grid(column=10,columnspan=40,ipadx=60,row=4)
 ApiFabric = tkinter.Radiobutton(MainTK,text="Fabric",variable=ModApi,value=2)
 ApiFabric.grid(column=10,columnspan=40,ipadx=60,row=5)
+ApiYB = tkinter.Radiobutton(MainTK,text="--原版",variable=ModApi,value=3)
+ApiYB.grid(column=10,columnspan=40,ipadx=60,row=6)
 AddMCVer = tkinter.Button(MainTK,text=" 安装该版本  ",command=addver)
-AddMCVer.grid(column=10,columnspan=10,ipadx=60,row=6)
+AddMCVer.grid(column=10,columnspan=10,ipadx=60,row=7)
 AddMCVerB = tkinter.Button(MainTK,text="安装其他版本",command=addverB)
-AddMCVerB.grid(column=10,columnspan=10,ipadx=60,row=7)
+AddMCVerB.grid(column=10,columnspan=10,ipadx=60,row=8)
 
-rnter = tkinter.Label(MainTK,text="\n\n")
-rnter.grid(column=10,columnspan=50,ipadx=60,row=8)
+BG = tkinter.IntVar()
+BG.set(1)
+bgb = tkinter.Radiobutton(MainTK,text="暗黑",variable=BG,value=1)
+bgb.grid(column=10,columnspan=50,ipadx=60,row=10)
+bgw = tkinter.Radiobutton(MainTK,text="明亮",variable=BG,value=2)
+bgw.grid(column=10,columnspan=50,ipadx=60,row=11)
+bgqh = tkinter.Button(MainTK,text="切换主题颜色",command=qh)
+bgqh.grid(column=10,columnspan=50,ipadx=60,row=12)
 
-list = tkinter.Listbox(MainTK,width=20,height=9)
-list.grid(column=10,columnspan=40,ipadx=70,row=10)
+list = tkinter.Listbox(MainTK,width=20,height=13)
+list.grid(column=10,columnspan=40,ipadx=70,row=14)
 
 for item in MinecraftVer:
     list.insert(0,item)
 
 br = tkinter.Label(MainTK,text="------")
-br.grid(column=10,columnspan=40,ipadx=60,row=11)
+br.grid(column=10,columnspan=40,ipadx=60,row=15)
 
 StartGameBtn = tkinter.Button(MainTK,text="启动游戏")
-StartGameBtn.grid(column=10,columnspan=40,ipadx=60,row=12)
+StartGameBtn.grid(column=10,columnspan=40,ipadx=60,row=16)
 
 MainTK.title("DB启动器")
-MainTK.geometry("1080x650")
+MainTK.geometry("1080x720")
+MainTK.overrideredirect(True)
 MainTK.mainloop()
