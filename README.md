@@ -17,7 +17,7 @@ A Minecraft launcher based on Python
 
 # 使用方法&注意事项
 
-* **到Tag找到相应版本下载好解压包解压**
+* **到Releases找到相应版本下载好解压包解压**
 * **下载Python≧3.10版本**
 * **按下`ctrl+r`,在对话框内输入:`cmd`**
 * **在cmd内输入如下代码安装或更新(50%的问题可以提供更新此库解决):`pip install ttkbootstrap`**
