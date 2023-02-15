@@ -60,8 +60,13 @@ def qh():
         print("ERROR")
 
 def addverB():
-    inst = Beta.window.ins_wind()
-    inst()
+    style = Style(theme="superhero")
+    MainTKT = style.master
+    MainTKT.title("DB启动器 - 安装其他版本")
+    MainTKT.geometry("1080x720")
+    MainTKT.mainloop()
+    #inst = Beta.window.ins_wind()
+    #inst()
     #MainTKT.mainloop()
     #pass
 
@@ -110,5 +115,5 @@ StartGameBtn.grid(column=10,columnspan=40,ipadx=60,row=16)
 
 MainTK.title("DB启动器")
 MainTK.geometry("1080x720")
-MainTK.overrideredirect(True)
+#MainTK.overrideredirect(True)
 MainTK.mainloop()
